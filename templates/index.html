@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+    <style>
+        #video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #video-frame {
+            border: 2px solid #000;
+            width: 640px;
+            height: 480px;
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Object Detection Video Stream</h1>
+
+    <div id="controls">
+        <button onclick="startVideo()">Start Video</button>
+        <button onclick="stopVideo()">Stop Video</button>
+    </div>
+
+    <div id="video-container">
+        <img id="video-frame" src="{{ url_for('video_feed') }}" alt="Video feed will appear here">
+    </div>
+
+    <script>
+        let videoFrame = document.getElementById('video-frame');
+
+        function startVideo() {
+            fetch('/control', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'start' })
+            }).then(response => {
+                if (response.ok) {
+                    videoFrame.src = "/video_feed";
+                } else {
+                    alert("Error starting video feed");
+                }
+            });
+        }
+
+        function stopVideo() {
+            fetch('/control', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'stop' })
+            }).then(response => {
+                if (response.ok) {
+                    videoFrame.src = "";
+                } else {
+                    alert("Error stopping video feed");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
