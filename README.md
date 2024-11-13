@@ -1,7 +1,8 @@
 # Progect
 
 This project, **Progect**, is a real-time object detection web application designed for dynamic video streaming, object detection, and user interactivity. It allows users to stream live video, detect objects in real-time, and download detection logs with customizable detection settings.
-![Uploading obj.jpg…]()
+
+![Uploading obj.png…]()
 
 
 
@@ -46,6 +47,94 @@ Upon completion, **Progect** will be valuable across various domains:
 4. **Healthcare & Assisted Living**: Observe patient movements and notify caregivers for enhanced care.
 5. **Agriculture**: Monitor crop and livestock conditions using drone-based detection systems.
 6. **Education & Research**: A practical tool for students and researchers exploring object detection.
+
+## Object Detection Model
+
+This project utilizes a pre-trained YOLO (You Only Look Once) model to detect a variety of objects in real-time from the video feed. The model (`model.pt`) is capable of detecting the following classes:
+
+- **0**: person
+- **1**: bicycle
+- **2**: car
+- **3**: motorcycle
+- **4**: airplane
+- **5**: bus
+- **6**: train
+- **7**: truck
+- **8**: boat
+- **9**: traffic light
+- **10**: fire hydrant
+- **11**: stop sign
+- **12**: parking meter
+- **13**: bench
+- **14**: bird
+- **15**: cat
+- **16**: dog
+- **17**: horse
+- **18**: sheep
+- **19**: cow
+- **20**: elephant
+- **21**: bear
+- **22**: zebra
+- **23**: giraffe
+- **24**: backpack
+- **25**: umbrella
+- **26**: handbag
+- **27**: tie
+- **28**: suitcase
+- **29**: frisbee
+- **30**: skis
+- **31**: snowboard
+- **32**: sports ball
+- **33**: kite
+- **34**: baseball bat
+- **35**: baseball glove
+- **36**: skateboard
+- **37**: surfboard
+- **38**: tennis racket
+- **39**: bottle
+- **40**: wine glass
+- **41**: cup
+- **42**: fork
+- **43**: knife
+- **44**: spoon
+- **45**: bowl
+- **46**: banana
+- **47**: apple
+- **48**: sandwich
+- **49**: orange
+- **50**: broccoli
+- **51**: carrot
+- **52**: hot dog
+- **53**: pizza
+- **54**: donut
+- **55**: cake
+- **56**: chair
+- **57**: couch
+- **58**: potted plant
+- **59**: bed
+- **60**: dining table
+- **61**: toilet
+- **62**: tv
+- **63**: laptop
+- **64**: mouse
+- **65**: remote
+- **66**: keyboard
+- **67**: cell phone
+- **68**: microwave
+- **69**: oven
+- **70**: toaster
+- **71**: sink
+- **72**: refrigerator
+- **73**: book
+- **74**: clock
+- **75**: vase
+- **76**: scissors
+- **77**: teddy bear
+- **78**: hair drier
+- **79**: toothbrush
+
+### How It Works
+The `model.pt` file contains a YOLO-based object detection model that identifies the above classes in real-time video feeds. The model works by drawing bounding boxes around each detected object and labeling them with the corresponding class name. This is achieved by processing the video frames through the model, which predicts the class labels and confidence scores for each detected object.
 
 ## Installation
 
