@@ -1,10 +1,13 @@
-from flask import Flask, render_template, Response, request, jsonify
+from flask import Flask, render_template, Response, request, jsonify, send_file
+from flask_socketio import SocketIO, emit
 import cv2
 from ultralytics import YOLO
 from datetime import datetime
 import os
+import pandas as pd
 
 app = Flask(__name__)
+socketio = SocketIO(app)  # Initialize SocketIO
 
 # Load the YOLO model
 model = YOLO('model.pt')
@@ -66,6 +69,14 @@ def generate_frames():
                 detected_objects[class_name] = True
                 with open(output_file_path, "a") as file:
                     file.write(f"{datetime.now()}: Detected {class_name}\n")
+                
+                # Emit detection data via WebSocket for real-time updates
+                detection_data = {
+                    'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    'object': class_name,
+                    'confidence': confidence
+                }
+                socketio.emit('new_detection', detection_data)
 
             # Bounding box coordinates
             x1, y1, x2, y2 = map(int, box.xyxy[0])
@@ -97,9 +108,30 @@ def video_feed():
     else:
         return jsonify({"error": "Video feed is not active"}), 400
 
+# Route for downloading logs
+@app.route('/download_logs', methods=['GET'])
+def download_logs():
+    # Save the logs as an Excel file
+    file_path = 'detection_logs.xlsx'
+    detection_logs = pd.read_csv(output_file_path, names=['Timestamp', 'Detected Object'])
+    detection_logs.to_excel(file_path, index=False)
+    
+    # Return the file for download
+    return send_file(file_path, as_attachment=True)
+
+# Route for the main page
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# SocketIO event handling
+@socketio.on('connect')
+def on_connect():
+    print('Client connected')
+
+@socketio.on('disconnect')
+def on_disconnect():
+    print('Client disconnected')
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app, debug=True)
