@@ -1,7 +1,8 @@
 # Progect
 
 This project, **Progect**, is a real-time object detection web application designed for dynamic video streaming, object detection, and user interactivity. It allows users to stream live video, detect objects in real-time, and download detection logs with customizable detection settings.
-![Uploading WhatsApp Image 2024-11-13 at 20.00.05_2592c869.jpg…]()
+![Uploading obj.jpg…]()
+
 
 
 ## Tech Stack
