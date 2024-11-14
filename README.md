@@ -2,8 +2,9 @@
 
 This project, **Progect**, is a real-time object detection web application designed for dynamic video streaming, object detection, and user interactivity. It allows users to stream live video, detect objects in real-time, and download detection logs with customizable detection settings.
 
-video link : https://drive.google.com/file/d/1kb_AU5jfYz4YmRZbpKbb4_xNtrJBpP2p/view?usp=drive_link
-Youtube video link : https://youtu.be/h-ACxbLcYLI
+## video link : https://drive.google.com/file/d/1kb_AU5jfYz4YmRZbpKbb4_xNtrJBpP2p/view?usp=drive_link
+
+## (progect) Youtube video link : https://youtu.be/h-ACxbLcYLI
 
 
 ![obj](https://github.com/user-attachments/assets/3f3ebd8c-1b58-4158-bf25-41dc623537e3)
