@@ -2,8 +2,8 @@
 
 This project, **Progect**, is a real-time object detection web application designed for dynamic video streaming, object detection, and user interactivity. It allows users to stream live video, detect objects in real-time, and download detection logs with customizable detection settings.
 
-![Uploading obj.png…]()
 
+![obj](https://github.com/user-attachments/assets/3f3ebd8c-1b58-4158-bf25-41dc623537e3)
 
 
 ## Tech Stack
@@ -19,6 +19,7 @@ The following technologies are used in this project:
 - **YOLO (You Only Look Once)**: Detects objects in real-time on video frames, drawing bounding boxes and labels.
 - **Pandas**: Organizes detection data into an Excel format for creating downloadable logs with metadata.
 - **Socket.IO**: Ensures seamless data flow between server and client for live video stream updates.
+
 
 ## Features
 
