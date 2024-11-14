@@ -150,6 +150,9 @@ The `model.pt` file contains a YOLO-based object detection model that identifies
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/progect.git
+   cd progect
+   pip install -r requirements.txt
+   python app.py
 Navigate to the project directory:
 
 cd progect
