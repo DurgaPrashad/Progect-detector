@@ -41,6 +41,10 @@ The following technologies are used in this project:
 4. **Automated Alerts**: Set detection triggers to notify users in real-time for specific object detections.
 5. **Advanced Analytics**: Provide insights based on detection history, heatmaps, and trends analysis.
 
+## Data Flow Diagram
+![diagram-export-11-14-2024-11_10_35-AM](https://github.com/user-attachments/assets/0a89f3f5-7f07-4edf-a4eb-d3aea1ed40cc)
+
+
 ## Potential Use Cases
 
 Upon completion, **Progect** will be valuable across various domains:
@@ -136,6 +140,7 @@ This project utilizes a pre-trained YOLO (You Only Look Once) model to detect a 
 - **77**: teddy bear
 - **78**: hair drier
 - **79**: toothbrush
+
 
 ### How It Works
 The `model.pt` file contains a YOLO-based object detection model that identifies the above classes in real-time video feeds. The model works by drawing bounding boxes around each detected object and labeling them with the corresponding class name. This is achieved by processing the video frames through the model, which predicts the class labels and confidence scores for each detected object.
