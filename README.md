@@ -20,6 +20,7 @@ The following technologies are used in this project:
 - **Pandas**: Organizes detection data into an Excel format for creating downloadable logs with metadata.
 - **Socket.IO**: Ensures seamless data flow between server and client for live video stream updates.
 
+![WhatsApp Image 2024-11-14 at 03 47 33_6cc0ad72](https://github.com/user-attachments/assets/b351d2b9-e0e8-4bc2-bfda-f570fe5506fb)
 
 ## Features
 
@@ -29,6 +30,8 @@ The following technologies are used in this project:
 4. **Downloadable Logs**: Export detection logs in JSON format, capturing details like object type, confidence level, and timestamp.
 5. **Dashboard**: View current and historical detections, logs, and statistical insights.
 6. **Differentiated Object Detection**: Detect different object types—**persons** and **vehicles**—with unique bounding box colors for better visual distinction.
+
+![image](https://github.com/user-attachments/assets/5d2791d1-1c34-43d1-bd97-48a1efb829d0)
 
 ## Future Enhancements
 
