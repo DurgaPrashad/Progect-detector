@@ -1,4 +1,4 @@
-# Pro - (gect)  
+# Pro-(gect)  
 
 This project, **Progect**, is a real-time object detection web application designed for dynamic video streaming, object detection, and user interactivity. It allows users to stream live video, detect objects in real-time, and download detection logs with customizable detection settings.
 
